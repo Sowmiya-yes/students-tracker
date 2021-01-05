@@ -1,0 +1,11 @@
+.App {
+  min-height: 100vh;
+}
+
+.btn {
+  font-size: 20px;
+  width: 400px;
+  height: 60px;
+  padding: 20px 50px;
+  background-color: #4285F4;
+}

@@ -1,6 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import {signInWithGoogle, signOut, auth} from './firebase-config';
+import Homepage from './pages/Homepage';
+import {signInWithGoogle, auth} from './firebase-config';
 
 function App() {
   const [user, setUser] = useState(null)
@@ -19,14 +20,14 @@ function App() {
     })
   }, [])
 
-  console.log(user)
 
   return (
     <div className="App">
+      <h1>Attendance Application</h1>
       {
         user ? 
-        <button onClick={signOut}>Sign Out</button> :
-        <button onClick={signInWithGoogle}>Sign In With Google</button>
+        <Homepage displayName={user.displayName}/> :
+        <button onClick={signInWithGoogle} className="btn">Sign In With Google</button>
       }
     </div>
   );
